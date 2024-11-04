@@ -1,17 +1,15 @@
-import Image from "next/image";
+// interface GithubRepo {
+//   name: string;
+//   description: string;
+//   url: string;
+// }
 
-interface GithubRepo {
-  name: string;
-  description: string;
-  url: string;
-}
-
-interface Profile {
-  name: string;
-  bio: string[];
-  skills: string[];
-  githubRepos: GithubRepo[];
-}
+// interface Profile {
+//   name: string;
+//   bio: string[];
+//   skills: string[];
+//   githubRepos: GithubRepo[];
+// }
 
 const profile = {
   name: "うみんちゅ",
