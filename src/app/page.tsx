@@ -1,101 +1,104 @@
 import Image from "next/image";
 
+interface GithubRepo {
+  name: string;
+  description: string;
+  url: string;
+}
+
+interface Profile {
+  name: string;
+  bio: string[];
+  skills: string[];
+  githubRepos: GithubRepo[];
+}
+
+const profile = {
+  name: "うみんちゅ",
+  bio: [
+    "はじめまして、2003年生まれのエンジニア志望の大学生うみんちゅと申します。",
+    "大学では情報工学を専攻しており、独学でlaravelやreactを学んでいます。",
+    "web系の自社開発企業を志望しています。",
+    "どうぞよろしくお願いします。",
+  ],
+  skills: ["HTML/CSS 1年半", "JavaScript 1年半", "PHP 1年半", "laravel 1年", "TypeScript 3ヶ月", "React 3ヶ月", "Next.js 3ヶ月"],
+  githubRepos: [
+    {
+      name: "就活管理アプリ",
+      description: "日々のタスク管理から、応募企業のバリデーション機能や就活スケジュールのカレンダー機能を持っています。",
+      url: "https://github.com/ryotasuyama/todo_laravel",
+    },
+    {
+      name: "React 学習その1",
+      description: "reactの基本的な操作の学習をしました。",
+      url: "https://github.com/ryotasuyama/react-1101",
+    },
+    {
+      name: "Next.jsポートフォリオサイト",
+      description: "Next.jsでこのポートフォリサイトを作成しました。Vercelでのデプロイを行いました。",
+      url: "https://github.com/ryotasuyama/my-portfolio",
+    },
+  ],
+};
+
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get starteddddddd by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="container mx-auto p-8">
+      <section className="text-center mb-8">
+        <h1 className="text-4xl font-bold mb-2">{profile.name}</h1>
+        <p className="text-lg text-gray-600">web系エンジニアを目指す学生</p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4">自己紹介</h2>
+        <p className="text-mb text-gray-700 max-w-2xl ">{profile.bio}</p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4">経験のある言語・フレームワーク</h2>
+        <ul className="flex flex-wrap gap-4">
+          {profile.skills.map((skill, index) => (
+            <li
+              key={index}
+              className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full"
+            >
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4">GitHubのリポジトリ紹介</h2>
+        <ul className="space-y-4">
+          {profile.githubRepos.map((repo, index) => (
+            <li key={index} className="border border-gray-300 rounded p-4">
+              <h3 className="text-lg font-bold">
+                <a
+                  href={repo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
+                >
+                  {repo.name}
+                </a>
+              </h3>
+              <p className="text-gray-700">{repo.description}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* <div className="mt-12 flex justify-center">
+        <Image
+          src="/favicon.ico"
+          alt="Profile Image"
+          width={150}
+          height={150}
+          className="rounded-full"
+        />
+      </div> */}
     </div>
   );
 }
