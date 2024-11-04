@@ -12,7 +12,7 @@ interface Profile {
   githubRepos: GithubRepo[];
 }
 
-const profile = {
+const profile: Profile = {
   name: "うみんちゅ",
   bio: [
     'はじめまして、2003年生まれのエンジニア志望の大学生うみんちゅと申します。',
@@ -36,7 +36,7 @@ const profile = {
       url: "https://github.com/ryotasuyama/react-1101",
       stack: ["react"],
       details: [
-        "このアプリでは、",
+        "このリポジトリはreactの基本を学習するためにtodoアプリを作成しました。",
         "",
       ]
     },
@@ -46,7 +46,7 @@ const profile = {
       stack: ["next.js", "Typescript"],
       details: [
         "このアプリでは、",
-        "日々のタスク管理から、応募企業のバリデーション機能や就活スケジュールのカレンダー機能を持っています。",
+        "next.jsでのポートフォリオサイトを作成しました。ホームとブログページを実装しています。",
       ]
     },
   ],
