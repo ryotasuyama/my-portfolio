@@ -20,7 +20,7 @@ const profile: Profile = {
     "web系の自社開発企業を志望しています。",
     "どうぞよろしくお願いします。",
   ],
-  skills: ["HTML/CSS 1年半", "JavaScript 1年半", "PHP 1年半", "laravel 1年", "TypeScript 3ヶ月", "React 3ヶ月", "Next.js 3ヶ月"],
+  skills: ["HTML/CSS 1年半", "JavaScript 1年半", "PHP 1年半", "laravel 1年", "TypeScript 1ヶ月", "React 1ヶ月", "Next.js 1ヶ月"],
   githubRepos: [
     {
       name: "就活管理アプリ",
